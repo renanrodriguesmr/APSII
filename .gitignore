@@ -531,4 +531,9 @@ pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/virtualenv
 
+# file to personal annotations
 obs.txt
+
+# data directory
+
+data/
