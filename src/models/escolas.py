@@ -1,9 +1,9 @@
 from src.models.abstract_dataset import AbstractDataset
+from src.models.settings import *
 import pandas as pd
 
 class Escolas(AbstractDataset):
     __instance = None
-    path = "data/ESCOLAS.CSV"
 
     def __init__(self):
     #Virtually private constructor.
@@ -22,5 +22,6 @@ class Escolas(AbstractDataset):
     
     def _preProcess(self):
         print("Lendo dados do censo")
-        df = pd.read_csv(self.path, sep="|", header=0, engine='python')
+        path = DATA_DIRECTORY + ESCOLAS_CSV 
+        df = pd.read_csv(path, sep="|", header=0, engine='python')
         self.data = df
