@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from src.models.escolas import Escolas
 from src.models.ideb_brasil import IDEBBrasil
+from src.models.ideb_escolas import IDEBEscolas
 
 class DatasetAbstractFactory(ABC):
     """
@@ -27,3 +28,11 @@ class Factory_IDEBBrasil(DatasetAbstractFactory):
     """
     def getDataset(self):
         return IDEBBrasil.getInstance().data
+
+class Factory_IDEBEscolas(DatasetAbstractFactory):
+    """
+    Concrete factory to produce a singleton to provide the 
+    preprocessed datataset of IDEBEscolas
+    """
+    def getDataset(self):
+        return IDEBEscolas.getInstance().data
