@@ -1,5 +1,5 @@
 from src.models.abstract_dataset import AbstractDataset
-from src.models.settings import *
+from src.models.settings import DATA_DIRECTORY, ESCOLAS_CSV
 import pandas as pd
 
 class Escolas(AbstractDataset):
@@ -23,5 +23,4 @@ class Escolas(AbstractDataset):
     def _preProcess(self):
         print("Lendo dados do censo")
         path = DATA_DIRECTORY + ESCOLAS_CSV 
-        df = pd.read_csv(path, sep="|", header=0, engine='python')
-        self.data = df
+        self.data = pd.read_csv(path, sep="|", header=0, engine='python')
