@@ -1,7 +1,8 @@
-from src.models.dataset_factories import Factory_SAEB_2011
+from src.models.dataset_factories import Factory_Escolas
+from src.models.setup import Setup
 
-print("hello")
+Setup.processData()
 
-f = Factory_SAEB_2011()
-
+f = Factory_Escolas()
 instance = f.getDataset()
+print(instance.head())

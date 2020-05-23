@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from src.models.saeb_2011 import SAEB2011
+from src.models.escolas import Escolas
 
 class DatasetAbstractFactory(ABC):
     """
@@ -11,10 +11,10 @@ class DatasetAbstractFactory(ABC):
     def getDataset(self):
         pass
 
-class Factory_SAEB_2011(DatasetAbstractFactory):
+class Factory_Escolas(DatasetAbstractFactory):
     """
     Concrete factory to produce a singleton to provide the 
-    preprocessed datataset of SAEB_2011
+    preprocessed datataset of Escolas
     """
     def getDataset(self):
-        return SAEB2011.getInstance()
+        return Escolas.getInstance().data
