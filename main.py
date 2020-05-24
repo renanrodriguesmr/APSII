@@ -23,7 +23,7 @@ def getQuestions():
 if __name__ == "__main__":
     Setup.processData()
     
-     questions = getQuestions()
+    questions = getQuestions()
 
     value = input('\nEscolha uma pergunta: ')
 
