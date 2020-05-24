@@ -1,4 +1,6 @@
-from src.models.dataset_factories import Factory_Escolas, Factory_IDEBBrasil, Factory_IDEBEscolas
+from src.models.factories.dataset_factory_escolas import Factory_Escolas
+from src.models.factories.dataset_factory_ideb_brasil import Factory_IDEBBrasil
+from src.models.factories.dataset_factory_ideb_escolas import Factory_IDEBEscolas
 
 class Setup():
 
