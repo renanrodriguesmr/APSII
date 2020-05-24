@@ -6,6 +6,7 @@ class Setup():
 
     @staticmethod
     def processData():
+        print("\n\n======= Carregando dados =======\n")
         f = Factory_IDEBBrasil()
         f.getDataset()
 

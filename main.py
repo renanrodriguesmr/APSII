@@ -4,6 +4,7 @@ from src.usecases.question2 import Question2
 from src.usecases.question3 import Question3
 
 def getQuestions():
+    print("\n\n======= Perguntas =======\n")
     q1 = Question1()
     q2 = Question2()
     q3 = Question3()
@@ -18,7 +19,7 @@ if __name__ == "__main__":
     Setup.processData()
     questions = getQuestions()
 
-    value = input('Escolha uma pergunta: ')
+    value = input('\nEscolha uma pergunta: ')
 
     q = questions[value]
     q.answer()
