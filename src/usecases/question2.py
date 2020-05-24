@@ -7,7 +7,6 @@ class Question2(Question):
         print("Pergunta 2: Escolas particulares possuem um maior índice de reprovação do que as escolas públicas?")
 
     def answer(self):
-        print("resposta 2")
         factory = Factory_IDEBBrasil()
         df = factory.getDataset()
         print("comparando do 6 ao 9 ano do ensindo fundamental...")
