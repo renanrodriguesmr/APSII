@@ -60,3 +60,10 @@ class Question1(Question):
     print("Possuir  ensino organizado em ciclos")
     print("Possuir alimentação para os alunos")
 
+
+    def transforms(p):
+    if (p<85):
+        return "yes"
+    else:
+        return "no"
+

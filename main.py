@@ -2,12 +2,7 @@ from src.models.setup import Setup
 from src.usecases.question1 import Question1
 from src.usecases.question2 import Question2
 from src.usecases.question3 import Question3
-from src.models.factories.dataset_factory_escolas import Factory_Escolas
-import numpy as np 
-from sklearn.datasets import make_classification
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
+
 
 
 
@@ -23,11 +18,7 @@ def getQuestions():
 
     return {"1": q1, "2": q2, "3": q3}
 
-def transforms(p):
-    if (p<85):
-        return "yes"
-    else:
-        return "no"
+
 
 if __name__ == "__main__":
     Setup.processData()
