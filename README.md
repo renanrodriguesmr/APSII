@@ -26,6 +26,10 @@ It is recommended to create a directory .data/ to store CSVs that compose the da
 make run
 ```
 
+## Running Tests
+
+python -m tests
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

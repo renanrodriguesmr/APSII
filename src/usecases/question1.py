@@ -6,12 +6,14 @@ from sklearn.datasets import make_classification
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.preprocessing import StandardScaler
 
+
+
 class Question1(Question):
     def ask(self):
         print("Pergunta 1: Quais as principais características que levam uma escola à ter um alto índice de reprovação, ou seja, por que uma escola reprova muito?")
 
     def answer(self):
-
+        
 
         print("resposta 1")
         factory = Factory_Escolas()
@@ -26,7 +28,7 @@ class Question1(Question):
             else:
                 return "no"
 
-
+        pd.set_option('mode.chained_assignment', None)
         df['Aprov_6_9'] = df['Aprov_6_9'].map(transforms)
         df['Aprov_6_9'] = df['Aprov_6_9'].astype('category')
 
