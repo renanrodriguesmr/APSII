@@ -1,8 +1,26 @@
-from src.models.factories.dataset_factory_escolas import Factory_Escolas
 from src.models.setup import Setup
+from src.usecases.question1 import Question1
+from src.usecases.question2 import Question2
+from src.usecases.question3 import Question3
 
-Setup.processData()
+def getQuestions():
+    q1 = Question1()
+    q2 = Question2()
+    q3 = Question3()
 
-f = Factory_Escolas()
-instance = f.getDataset()
-print(instance.iloc[1])
+    q1.ask()
+    q2.ask()
+    q3.ask()
+
+    return {"1": q1, "2": q2, "3": q3}
+
+if __name__ == "__main__":
+    Setup.processData()
+    questions = getQuestions()
+
+    value = input('Escolha uma pergunta: ')
+
+    q = questions[value]
+    q.answer()
+
+
