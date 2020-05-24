@@ -22,5 +22,6 @@ class IDEBBrasil(AbstractDataset):
     
     def _preProcess(self):
         print("Lendo dados do ideb brasil 2015...")
-        path = DATA_DIRECTORY + IDEBBrasil_CSV 
-        self.data = pd.read_csv(path, sep="|", header=0)
+        path = DATA_DIRECTORY + IDEBBrasil_CSV
+        cols_to_use = ["Rede", "Aprov_6_9", "Aprov_6", "Aprov_7", "Aprov_8", "Aprov_9"]
+        self.data = pd.read_csv(path, sep="|", header=0, usecols=cols_to_use)
