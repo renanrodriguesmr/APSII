@@ -22,5 +22,10 @@ class IDEBEscolas(AbstractDataset):
     
     def _preProcess(self):
         print("Lendo dados do ideb escolas 2015...")
+
         path = DATA_DIRECTORY + IDEBEscolas_EXCEL 
-        self.data = pd.read_excel(path, sheet_name="IDEB_Escolas", header=0)
+        cols_to_use = ["cod_escola", "Aprov_6_9", "Aprov_6", "Aprov_7", "Aprov_8", "Aprov_9"]
+        dtype_to_use = {"cod_escola": "Int64", "Aprov_6_9": "float64", "Aprov_6": "float64", "Aprov_7": "float64", "Aprov_8": "float64", "Aprov_9": "float64"}
+        na_values_list = ['-', ]
+
+        self.data = pd.read_excel(path, sheet_name="IDEB_Escolas", decimal=",", header=0, usecols=cols_to_use, dtype=dtype_to_use, na_values=na_values_list)

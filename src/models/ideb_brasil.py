@@ -24,4 +24,6 @@ class IDEBBrasil(AbstractDataset):
         print("Lendo dados do ideb brasil 2015...")
         path = DATA_DIRECTORY + IDEBBrasil_CSV
         cols_to_use = ["Rede", "Aprov_6_9", "Aprov_6", "Aprov_7", "Aprov_8", "Aprov_9"]
-        self.data = pd.read_csv(path, sep="|", header=0, usecols=cols_to_use)
+        dtype_to_use = {"Aprov_6_9": "float64", "Aprov_6": "float64", "Aprov_7": "float64", "Aprov_8": "float64", "Aprov_9": "float64"}
+
+        self.data = pd.read_csv(path, sep="|", header=0, usecols=cols_to_use, decimal=",", dtype=dtype_to_use)
