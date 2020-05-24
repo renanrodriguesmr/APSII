@@ -1,5 +1,5 @@
 from src.models.factories.dataset_factory_abstract import DatasetAbstractFactory
-from src.models.ideb_brasil import IDEBBrasil
+from src.models.dataset.ideb_brasil import IDEBBrasil
 
 class Factory_IDEBBrasil(DatasetAbstractFactory):
     """

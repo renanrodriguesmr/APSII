@@ -1,4 +1,4 @@
-from src.models.abstract_dataset import AbstractDataset
+from src.models.dataset.abstract_dataset import AbstractDataset
 from src.models.factories.dataset_factory_ideb_escolas import Factory_IDEBEscolas
 from src.models.settings import DATA_DIRECTORY, ESCOLAS_CSV
 import pandas as pd

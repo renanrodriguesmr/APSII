@@ -1,4 +1,4 @@
-from src.models.escolas import Escolas
+from src.models.dataset.escolas import Escolas
 from src.models.factories.dataset_factory_abstract import DatasetAbstractFactory
 
 class Factory_Escolas(DatasetAbstractFactory):

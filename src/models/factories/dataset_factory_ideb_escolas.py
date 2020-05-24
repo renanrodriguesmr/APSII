@@ -1,5 +1,5 @@
 from src.models.factories.dataset_factory_abstract import DatasetAbstractFactory
-from src.models.ideb_escolas import IDEBEscolas
+from src.models.dataset.ideb_escolas import IDEBEscolas
 
 class Factory_IDEBEscolas(DatasetAbstractFactory):
     """

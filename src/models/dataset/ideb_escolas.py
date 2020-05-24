@@ -1,4 +1,4 @@
-from src.models.abstract_dataset import AbstractDataset
+from src.models.dataset.abstract_dataset import AbstractDataset
 from src.models.settings import DATA_DIRECTORY, IDEBEscolas_EXCEL
 import pandas as pd
 
