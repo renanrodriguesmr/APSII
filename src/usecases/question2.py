@@ -29,8 +29,8 @@ class Question2(Question):
     
     def __printGreaterType(self, public, private):
         if(public < private):
-            return "Escolas Pública possuem taxas menores."
+            return "Escolas Pública possuem taxas maiores de reprovação."
         if(public == private):
             return "Escolas públicas e privadas possuem a mesma taxa de reprovação"
 
-        return "Escolas Privadas possuem taxas menores."
+        return "Escolas Privadas possuem taxas maiores de reprovação."
