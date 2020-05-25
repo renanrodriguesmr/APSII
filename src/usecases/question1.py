@@ -13,9 +13,6 @@ class Question1(Question):
         print("Pergunta 1: Quais as principais características que levam uma escola à ter um alto índice de reprovação, ou seja, por que uma escola reprova muito?")
 
     def answer(self):
-        
-
-        print("resposta 1")
         factory = Factory_Escolas()
         df = factory.getDataset()
         print("comparando resultados das escolas públicas do brasil")
@@ -55,21 +52,48 @@ class Question1(Question):
         forest.fit(X,y)
 
         importances = forest.feature_importances_
-        std = np.std([tree.feature_importances_ for tree in forest.estimators_],
+        np.std([tree.feature_importances_ for tree in forest.estimators_],
                 axis=0)
         indices = np.argsort(importances)[::-1]
 
         # Print the feature ranking
         print("Feature ranking:")
 
+        features_name = self.get_columns_name()
+        descriptions = self.get_descption_columns()
+
         for f in range(X.shape[1]):
-            print("%d. feature %d (%f)" % (f + 1, indices[f], importances[indices[f]]))
+            print("%d. %s (%f)" % (f + 1, descriptions[features_name[indices[f]]], importances[indices[f]]))
 
-        print("As features 13,15,14 e 11 mostram-se relevantes para questão e representam, respectivamente, os fatos de uma escola:")
-        print("Possuir atividades complementares")
-        print("Possuir atividades atividades aos finais de semana")
-        print("Possuir  ensino organizado em ciclos")
-        print("Possuir alimentação para os alunos")
+        print("\nPortanto as features mais relevantes são:")
 
+        for f in range(5):
+            print("%d. %s" % (f + 1, descriptions[features_name[indices[f]]]))
 
-    
+    def get_columns_name(self):
+        factory = Factory_Escolas()
+        df = factory.getDataset()
+        return df.columns
+
+    def get_descption_columns(self):
+        return {
+                "TP_ATIVIDADE_COMPLEMENTAR": "Atividade complementar",
+                "IN_FINAL_SEMANA": "Atividade final de semana",
+                "IN_FUNDAMENTAL_CICLOS": "Ensino em ciclos",
+                "IN_ALIMENTACAO": "Alimentação na escola",
+                "CO_UF": "Município",
+                "IN_AGUA_FILTRADA": "Água Filtrada",
+                "CO_REGIAO": "Região",
+                "TP_LOCALIZACAO": "Localização Rural/urbana",
+                "CO_ENTIDADE": "código da escola",
+                "TP_DEPENDENCIA": "federal/municipal/estadual",
+                "TP_AEE": "Atendimento educacional especializado",
+                "cod_escola": "Código da escola",
+                "IN_ENERGIA_INEXISTENTE": "Energia inexistente",
+                "IN_MEDIACAO_PRESENCIAL": "Presencial",
+                "IN_AREA_VERDE": "Possui area verde",
+                "IN_ESP_EXCLUSIVA_FUND_AF": "Exclusiva para turmas de 6 a 9 ano",
+                "IN_QUADRA_ESPORTES": "Possui quadra de esportes",
+                "IN_INTERNET": "Possui internet",
+                "IN_BIBLIOTECA_SALA_LEITURA": "Existe biblioteca ou sala de leitura",
+                }
