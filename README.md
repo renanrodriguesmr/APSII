@@ -1,24 +1,31 @@
 # APSII
 
-APSII is a small project to answer some questions about brazilian education.
-Currently, the questions are:
-- Why does a student fail?
-- Do Private schools have failure rates lower than public schools?
-- Does the failure rate increase over the levels?
+APSII é um pequeno projeto para responder 3 questões sobre o ensino fundamental brasileiro, para a avaliação na matéria Análise de Projetos e Sistemas II do IME.
+
+As questões são:
+- Quais as principais características que levam uma escola à ter um alto índice de reprovação, ou seja, por que uma escola reprova muito?
+- Escolas particulares possuem um maior índice de reprovação do que as escolas públicas?
+- A taxa de reprovação aumenta ao longo do ensino fundamental?
 
 ## Installation
 
-This project contains a mafe file to provide the installations.
+O projeto possui um make file para prover a instalação. Então, basta realizar o seguinte comando:
 
 ```bash
 make install
 ```
 
-It is recommended to create a [virtual environment](https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais) before running this command.
+A instalação pode ser feita manualmente através do seguinte comando:
+
+```bash
+pip install -r requirements.txt
+```
+
+É recomendado a criação de um [virtual environment](https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais) antes da instalação.
 
 ## Data
 
-It is recommended to create a directory .data/ to store CSVs that compose the database of the project
+É recomendado a criação de um diretório .data/ para armazenar os datasets que serão utilizados no projeto.
 
 ## Usage
 
@@ -26,14 +33,15 @@ It is recommended to create a directory .data/ to store CSVs that compose the da
 make run
 ```
 
+ou 
+
+```bash
+python3 main.py
+```
+
 ## Running Tests
 
 python -m tests
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
